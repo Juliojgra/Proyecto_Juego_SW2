@@ -248,6 +248,9 @@ def pantalla_info():
         pg.display.update()
         reloj.tick(5)
 
+def botones_menu(superficie, color , pos1, pos2, tam1 , tam2):
+    boton = pg.draw.rect(superficie, color , (pos1, pos2, tam1 , tam2))
+    return boton
 
 def intro_modo(intro, modo_juego):
     i2, i3, i4, i5 = 0, 0, 0, 0
@@ -262,6 +265,7 @@ def intro_modo(intro, modo_juego):
                 modo = seleccionarModo(mx, my)
                 if modo > 0: return modo
         screen.blit(bg_intro, (0, 0))
+        
 
         for mod in modo_juego:
             print(mod)

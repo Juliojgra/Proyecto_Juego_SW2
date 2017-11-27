@@ -150,7 +150,7 @@ lista_escenarios = [bg_moche,
                     bg_tiahua,
                     bg_wari]
 
-def msg_boton(msg, color, posx, posy, ancho, alto, tamano_letra="pequena"):
+def msg_boton(msg, color, posx, posy, ancho, alto, tamano_letra="micro"):
 
     textSur, textRect = text_objetos(msg, color, tamano_letra)
     textRect.center = (posx + (ancho/2), posy + (alto/2))

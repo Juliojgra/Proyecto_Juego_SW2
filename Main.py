@@ -32,6 +32,7 @@ reloj = pg.time.Clock()
 
 display_ancho = 800
 display_altura = 600
+microfont = pg.font.SysFont("comicsansms", 10)
 pequenafont = pg.font.SysFont("comicsansms", 25)
 medianofont = pg.font.SysFont("comicsansms", 50)
 largofont = pg.font.SysFont("comicsansms", 80)
@@ -149,6 +150,11 @@ lista_escenarios = [bg_moche,
                     bg_tiahua,
                     bg_wari]
 
+def msg_boton(msg, color, posx, posy, ancho, alto, tamano_letra="pequena"):
+
+    textSur, textRect = text_objetos(msg, color, tamano_letra)
+    textRect.center = (posx + (ancho/2), posy + (alto/2))
+    screen.blit(textSur, textRect)
 
 def message_to_screen(msg, color, y_displace=0, tamano_letra="pequena"):
 
@@ -164,6 +170,8 @@ def text_objetos(text, color, tamano_letra):
         textSuperficie = medianofont.render(text, True, color)
     elif tamano_letra == "largo":
         textSuperficie = largofont.render(text, True, color)
+    elif tamano_letra == "micro":
+        textSuperficie = microfont.render(text, True, color)
     return textSuperficie, textSuperficie.get_rect()
 
 
@@ -263,6 +271,7 @@ def intro_modo(intro, modo_juego):
                 if modo > 0: return modo
         screen.blit(bg_intro, (0, 0))
 
+
         for mod in modo_juego:
             print(mod)
             if mod == "single":
@@ -295,6 +304,7 @@ def intro_modo(intro, modo_juego):
         screen.blit(sprites_image_sheet[i2], (300, -30))
         i2 = (i2 + 1) % 2
         message_to_screen("Escoger un modo de juego", BLACK, -160, "pequena")
+        
         pg.display.update()
         reloj.tick(5)
         

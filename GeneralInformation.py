@@ -4,6 +4,7 @@ SKY_BLUE = 7, 242, 212
 ORANGE = 239, 127, 26
 BLACK = 0, 0, 0
 ORANGE_LIGTH = 255, 183, 87
+BLUE = 0, 0, 255
 
 # game options/settings
 TITLE = "RUN INKA RUN GAME"

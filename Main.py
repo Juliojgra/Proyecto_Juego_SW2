@@ -150,6 +150,11 @@ lista_escenarios = [bg_moche,
                     bg_tiahua,
                     bg_wari]
 
+def botones(superficie, color, pos1, pos2, tam1 , tam2):
+    boton = pg.draw.rect(superficie, color, (pos1, pos2, tam1, tam2))
+    return boton
+
+
 def msg_boton(msg, color, posx, posy, ancho, alto, tamano_letra="micro"):
 
     textSur, textRect = text_objetos(msg, color, tamano_letra)
@@ -161,6 +166,7 @@ def message_to_screen(msg, color, y_displace=0, tamano_letra="pequena"):
     textSur, textRect = text_objetos(msg, color, tamano_letra)
     textRect.center = (display_ancho / 2), (display_altura / 2) + y_displace
     screen.blit(textSur, textRect)
+    
 
 
 def text_objetos(text, color, tamano_letra):
